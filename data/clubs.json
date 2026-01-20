@@ -1,1 +1,69 @@
-[]
+[
+  {
+    "id": 1,
+    "short_name": "ABC",
+    "full_name": "ABC Futebol Clube",
+    "slug": "abc",
+    "founded": 1915,
+    "status": "Ativo",
+    "category": "Proficional",
+    "location": {
+      "city": "",
+      "state": "",
+      "region": "",
+      "map_url": ""
+    },
+    "identity": {
+      "colors": [],
+      "mascot": [],
+      "nickname": [],
+      "uniform": []
+    },
+    "stadium": {
+      "name": "",
+      "capacity": null
+    },
+    "organization": {
+      "federation": "",
+      "confederation": "CBF"
+    },
+    "competition": {
+      "national_division": "",
+      "state_division": "",
+      "current_season": ""
+    },
+    "history": {
+      "titles": {
+        "international": [],
+        "national": [],
+        "state": []
+      },
+      "first_title_year": null,
+      "rivals": []
+    },
+    "anthem": {
+      "title": "",
+      "lyrics_url": "",
+      "audio_url": ""
+    },
+    "media": {
+      "badge": "/uploads/abcfc-1768920977631-10291417.png",
+      "stadium_image": ""
+    },
+    "links": {
+      "official_website": "",
+      "others_website": [],
+      "social": {
+        "instagram": "",
+        "twitter": "",
+        "facebook": "",
+        "youtube": ""
+      }
+    },
+    "metadata": {
+      "created_at": "2026-01-20T14:56:17.637Z",
+      "updated_at": "2026-01-20T14:56:17.637Z",
+      "source": ""
+    }
+  }
+]
