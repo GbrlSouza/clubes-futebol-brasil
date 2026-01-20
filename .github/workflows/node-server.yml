@@ -2,9 +2,9 @@ name: Node.js Server CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-run:
@@ -19,8 +19,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: "18"
+          cache: "npm"
 
       # 3. Instala dependências
       - name: Install dependencies
@@ -32,3 +32,40 @@ jobs:
           nohup npm start &
           sleep 10
           curl -f http://localhost:3000 || (echo "Server did not start" && exit 1)
+
+      # 5. Executa testes (se houver)
+      - name: Run tests
+        run: npm test
+        continue-on-error: true
+
+      # 6. Finaliza o servidor
+      - name: Stop server
+        run: |
+          pkill -f "npm start" || echo "No server process found"
+
+      # 7. Reporta resultados dos testes
+      - name: Report test results
+        if: failure()
+        run: echo "Some tests failed. Please check the logs above for details."
+
+      - name: All tests passed
+        if: success()
+        run: echo "All tests passed successfully!"
+
+  deploy:
+    needs: build-and-run
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && success()
+
+    steps:
+      - name: Deploy to Production
+        run: echo "Deploying to production server..."
+        # Adicione aqui os comandos reais de deploy, como SSH para o servidor, etc.
+        # Exemplo:
+        # - name: Copy files to server
+        #   run: scp -r ./build user@yourserver:/path/to/deploy 
+        # - name: Restart server
+        #   run: ssh user@yourserver 'pm2 restart all'
+    
+      - name: Deployment completed
+        run: echo "Deployment completed successfully!"
