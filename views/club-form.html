@@ -25,99 +25,154 @@
     <h3 id="formTitle">Novo Clube</h3>
     <form id="clubForm" enctype="multipart/form-data">
       <div class="row g-3">
-        <div class="col-md-6">
-          <label class="form-label">Nome curto *</label>
+        <div class="col-md-4">
+          <label for="short_name" class="form-label">Nome curto *</label>
           <input name="short_name" id="short_name" class="form-control" required>
         </div>
-        <div class="col-md-6">
-          <label class="form-label">Nome completo *</label>
+        <div class="col-md-4">
+          <label for="full_name" class="form-label">Nome completo *</label>
           <input name="full_name" id="full_name" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <label for="slug" class="form-label">Slug *</label>
+          <input name="slug" id="slug" class="form-control" required>
         </div>
 
         <div class="col-md-3">
-          <label class="form-label">Fundado</label>
+          <label for="founded" class="form-label">Fundado</label>
           <input name="founded" id="founded" type="number" class="form-control" min="1800" max="2100">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Status</label>
+          <label for="status" class="form-label">Status</label>
           <select name="status" id="status" class="form-select">
             <option value="">Selecione</option>
             <option>Ativo</option>
             <option>Inativo</option>
+            <option>extinto</option>
           </select>
         </div>
         <div class="col-md-3">
-          <label class="form-label">Categoria</label>
-          <input name="category" id="category" class="form-control">
+          <label for="categorySelect" class="form-label">Categoria</label>
+          <select name="category" id="categorySelect" class="form-select">
+            <option value="">Selecione</option>
+            <option>Profissional</option>
+            <option>Amador</option>
+            <option>Base</option>
+            <option>Várzea</option>
+          </select>
         </div>
         <div class="col-md-3">
-          <label class="form-label">Divisão Nacional</label>
+          <label for="competition.national_division" class="form-label">Divisão Nacional</label>
           <input name="competition.national_division" id="competition.national_division" class="form-control">
+          <select name="competition.national_division" id="competition.national_division_select" class="form-select">
+            <option value="">Selecione</option>
+            <option>Serie A</option>
+            <option>Serie B</option>
+            <option>Serie C</option>
+            <option>Serie D</option>
+            <option>Sem Divisão</option>
+          </select>
         </div>
 
         <hr class="my-2">
 
         <div class="col-md-3">
-          <label class="form-label">Cidade</label>
+          <label for="location.city" class="form-label">Cidade</label>
           <input name="location.city" id="location.city" class="form-control">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Estado</label>
-          <input name="location.state" id="location.state" class="form-control">
+          <label for="location.stateSelect" class="form-label">Estado</label>
+          <select name="location.state" id="location.stateSelect" class="form-select">
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
         </div>
         <div class="col-md-3">
-          <label class="form-label">Região</label>
-          <input name="location.region" id="location.region" class="form-control">
+          <label for="location.regionSelect" class="form-label">Região</label>
+          <select name="location.region" id="location.regionSelect" class="form-select">
+            <option value="">Selecione</option>
+            <option>Norte</option>
+            <option>Nordeste</option>
+            <option>Centro-Oeste</option>
+            <option>Sudeste</option>
+            <option>Sul</option>
+          </select>
         </div>
         <div class="col-md-3">
-          <label class="form-label">Mapa URL</label>
+          <label for="location.map_url" class="form-label">Mapa URL</label>
           <input name="location.map_url" id="location.map_url" class="form-control">
         </div>
 
         <hr class="my-2">
 
         <div class="col-md-6">
-          <label class="form-label">Cores (separadas por vírgula)</label>
+          <label for="identity.colors" class="form-label">Cores (separadas por vírgula)</label>
           <input name="identity.colors" id="identity.colors" class="form-control">
         </div>
         <div class="col-md-6">
-          <label class="form-label">Apelidos (separados por vírgula)</label>
+          <label for="identity.nickname" class="form-label">Apelidos (separados por vírgula)</label>
           <input name="identity.nickname" id="identity.nickname" class="form-control">
         </div>
 
         <div class="col-md-6">
-          <label class="form-label">Estádio</label>
+          <label for="stadium.name" class="form-label">Estádio</label>
           <input name="stadium.name" id="stadium.name" class="form-control">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Capacidade</label>
+          <label for="stadium.capacity" class="form-label">Capacidade</label>
           <input name="stadium.capacity" id="stadium.capacity" type="number" class="form-control">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Fonte</label>
+          <label for="metadata.source" class="form-label">Links</label>
           <input name="metadata.source" id="metadata.source" class="form-control">
         </div>
 
         <hr class="my-2">
 
         <div class="col-md-6">
-          <label class="form-label">Escudo (badge)</label>
+          <label for="media.badge" class="form-label">Escudo (badge)</label>
           <input name="media.badge" id="media.badge" type="file" accept="image/*" class="form-control">
           <img id="previewBadge" src="" alt="" class="img-thumbnail mt-2" style="max-width:150px; display:none;">
         </div>
         <div class="col-md-6">
-          <label class="form-label">Imagem do Estádio</label>
+          <label for="media.stadium_image" class="form-label">Imagem do Estádio</label>
           <input name="media.stadium_image" id="media.stadium_image" type="file" accept="image/*" class="form-control">
           <img id="previewStadium" src="" alt="" class="img-thumbnail mt-2" style="max-width:250px; display:none;">
         </div>
 
         <div class="col-md-6">
-          <label class="form-label">Mascotes (várias imagens)</label>
+          <label for="identity.mascot" class="form-label">Mascotes (várias imagens)</label>
           <input name="identity.mascot" id="identity.mascot" type="file" accept="image/*" multiple class="form-control">
           <div id="previewMascots" class="mt-2 d-flex gap-2 flex-wrap"></div>
         </div>
         <div class="col-md-6">
-          <label class="form-label">Uniformes (várias imagens)</label>
+          <label for="identity.uniform" class="form-label">Uniformes (várias imagens)</label>
           <input name="identity.uniform" id="identity.uniform" type="file" accept="image/*" multiple
             class="form-control">
           <div id="previewUniforms" class="mt-2 d-flex gap-2 flex-wrap"></div>
