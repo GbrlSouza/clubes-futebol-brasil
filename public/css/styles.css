@@ -1,0 +1,33 @@
+body {
+  padding-bottom: 80px;
+}
+
+.timeline {
+  border-left: 3px solid #dee2e6;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.6rem;
+  top: 0.2rem;
+  width: 12px;
+  height: 12px;
+  background: #0d6efd;
+  border-radius: 50%;
+}
+
+.card-club {
+  transition: transform .12s ease;
+}
+
+.card-club:hover {
+  transform: translateY(-4px);
+}

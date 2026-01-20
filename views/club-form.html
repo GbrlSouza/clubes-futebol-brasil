@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulário de Clube</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container container-fluid">
+      <a class="navbar-brand" href="/">Clubes BR</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Lista</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5 pt-4">
+    <h3 id="formTitle">Novo Clube</h3>
+    <form id="clubForm" enctype="multipart/form-data">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nome curto *</label>
+          <input name="short_name" id="short_name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Nome completo *</label>
+          <input name="full_name" id="full_name" class="form-control" required>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label">Fundado</label>
+          <input name="founded" id="founded" type="number" class="form-control" min="1800" max="2100">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Status</label>
+          <select name="status" id="status" class="form-select">
+            <option value="">Selecione</option>
+            <option>Ativo</option>
+            <option>Inativo</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Categoria</label>
+          <input name="category" id="category" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Divisão Nacional</label>
+          <input name="competition.national_division" id="competition.national_division" class="form-control">
+        </div>
+
+        <hr class="my-2">
+
+        <div class="col-md-3">
+          <label class="form-label">Cidade</label>
+          <input name="location.city" id="location.city" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Estado</label>
+          <input name="location.state" id="location.state" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Região</label>
+          <input name="location.region" id="location.region" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Mapa URL</label>
+          <input name="location.map_url" id="location.map_url" class="form-control">
+        </div>
+
+        <hr class="my-2">
+
+        <div class="col-md-6">
+          <label class="form-label">Cores (separadas por vírgula)</label>
+          <input name="identity.colors" id="identity.colors" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Apelidos (separados por vírgula)</label>
+          <input name="identity.nickname" id="identity.nickname" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Estádio</label>
+          <input name="stadium.name" id="stadium.name" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Capacidade</label>
+          <input name="stadium.capacity" id="stadium.capacity" type="number" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Fonte</label>
+          <input name="metadata.source" id="metadata.source" class="form-control">
+        </div>
+
+        <hr class="my-2">
+
+        <div class="col-md-6">
+          <label class="form-label">Escudo (badge)</label>
+          <input name="media.badge" id="media.badge" type="file" accept="image/*" class="form-control">
+          <img id="previewBadge" src="" alt="" class="img-thumbnail mt-2" style="max-width:150px; display:none;">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Imagem do Estádio</label>
+          <input name="media.stadium_image" id="media.stadium_image" type="file" accept="image/*" class="form-control">
+          <img id="previewStadium" src="" alt="" class="img-thumbnail mt-2" style="max-width:250px; display:none;">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Mascotes (várias imagens)</label>
+          <input name="identity.mascot" id="identity.mascot" type="file" accept="image/*" multiple class="form-control">
+          <div id="previewMascots" class="mt-2 d-flex gap-2 flex-wrap"></div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Uniformes (várias imagens)</label>
+          <input name="identity.uniform" id="identity.uniform" type="file" accept="image/*" multiple
+            class="form-control">
+          <div id="previewUniforms" class="mt-2 d-flex gap-2 flex-wrap"></div>
+        </div>
+
+        <div class="col-12 d-flex gap-2">
+          <button id="saveBtn" class="btn btn-primary">Salvar</button>
+          <a href="/" class="btn btn-secondary">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4 fixed-bottom">
+    <div class="container">
+      <small>Formulário de cadastro e edição de clubes</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/club-form.js"></script>
+</body>
+
+</html>
