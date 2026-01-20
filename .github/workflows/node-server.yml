@@ -1,0 +1,34 @@
+name: Node.js Server CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout do código
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Instala Node.js (versão estável LTS)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 3. Instala dependências
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Testa se o servidor sobe
+      - name: Run server
+        run: |
+          nohup npm start &
+          sleep 10
+          curl -f http://localhost:3000 || (echo "Server did not start" && exit 1)
