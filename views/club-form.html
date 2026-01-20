@@ -38,11 +38,11 @@
           <input name="slug" id="slug" class="form-control" required>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-2">
           <label for="founded" class="form-label">Fundado</label>
-          <input name="founded" id="founded" type="number" class="form-control" min="1800" max="2100">
+          <input name="founded" id="founded" type="number" class="form-control" min="1850" max="2100">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <label for="status" class="form-label">Status</label>
           <select name="status" id="status" class="form-select">
             <option value="">Selecione</option>
@@ -51,7 +51,7 @@
             <option>extinto</option>
           </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <label for="categorySelect" class="form-label">Categoria</label>
           <select name="category" id="categorySelect" class="form-select">
             <option value="">Selecione</option>
@@ -70,6 +70,18 @@
             <option>Serie B</option>
             <option>Serie C</option>
             <option>Serie D</option>
+            <option>Sem Divisão</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="competition.state_division" class="form-label">Divisão Estadual</label>
+          <input name="competition.state_division" id="competition.state_division" class="form-control">
+          <select name="competition.state_division" id="competition.state_division_select" class="form-select">
+            <option value="">Selecione</option>
+            <option>Primeira Divisão</option>
+            <option>Segunda Divisão</option>
+            <option>Terceira Divisão</option>
+            <option>Quarta Divisão</option>
             <option>Sem Divisão</option>
           </select>
         </div>
